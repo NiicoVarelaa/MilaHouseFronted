@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Mouse+Memoirs&family=Poppins:wght@300;400&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #FAD961;
+    background-image: linear-gradient(0deg, #FAD961 0%, #F76B1C 100%);
+    min-height: 100vh;
+}
+
+
+/* =============== NAVBAR START =============== */
+
+
+.navBarCustom {
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+    background-color: #FFE53B;
+    background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+}
+
+
+/* =============== MAIN START =============== */
+
+
+.linkCustom {
+    text-decoration: none;
+    color: white;
+    padding-left: 10px;
+}
+
+.linkCustom:hover {
+    color: #ffffff;
+}
+
+.tituloCustom {
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
+
+.containerCustom div img {
+    transition: transform .5s ease;
+    box-shadow: 0 10px 6px -6px rgba(6, 4, 12, 0.801);
+}
+
+.containerCustom div img:hover {
+    transform: scale(1.1);
+}
+
+.containerCustom2 div img {
+    margin-top: 50px;
+    transition: transform .5s ease;
+    box-shadow: 0 10px 6px -6px rgba(6, 4, 12, 0.801);
+}
+
+.containerCustom2 div img:hover {
+    transform: scale(1.1);
+}
+
+/* =============== MAIN END =============== */
+
+.iconoCustom2 {
+    color: #FF2525 !important;
+    font-size: 25px !important;
+}

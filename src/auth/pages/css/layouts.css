@@ -1,0 +1,54 @@
+.footerCustom {
+    background-color: rgba(0, 0, 0, 0.479);
+    color: white;
+}
+
+.footerCustom2 {
+    background-color: rgba(0, 0, 0, 0.2)
+}
+
+.buttonCustom {
+    color: white !important;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+    background-color: #FFE53B;
+    border: none !important;
+
+}
+
+.buttonCustom2 {
+    color: white;
+    background: linear-gradient(110.1deg, rgb(241, 115, 30) 18.9%, rgb(231, 29, 54) 90.7%);
+    border: none;
+    border-radius: 5px;
+}
+
+.iconoCustom {
+    color: white;
+}
+
+.imgCustom {
+    height: 750px;
+    margin-top: 30px;
+}
+
+.gradient-background {
+    background: linear-gradient(286deg, #fad961, #f76b1c, #ff2525);
+    background-size: 180% 180%;
+    animation: gradient-animation 12s ease infinite;
+}
+
+
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
