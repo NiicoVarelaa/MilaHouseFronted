@@ -1,24 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Mouse+Memoirs&family=Poppins:wght@300;400&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* =============== LOGIN  =============== */
+
 .login-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
 	background-color: #FAD961;
-    background-image: linear-gradient(0deg, #FAD961 0%, #F76B1C 100%);
+    background-image: linear-gradient(0deg, #FAD961 0%, #FAD961 100%);
 }
 
 .errorStyle {
-	background-color: red;
-	color: white;
+	background: linear-gradient(0deg, #e61515 0%, #e61515 100%);
+	color: #f5f3f3;
 	text-align: center;
-	padding: 12px;
+	padding: 3px;
+	border-radius: 10px;
+	margin-bottom: 40px;
 }
 
 .form-container {
 	display: flex;
 	flex-direction: column;
-	background-color: #FFE53B;
-	background-image: linear-gradient(0deg, #FFE53B 0%, #ff3c3c 74%);
+	background: radial-gradient(343px at 46.3% 47.5%, rgb(242, 242, 242) 0%, rgb(241, 241, 241) 72.9%);
 	padding: 30px;
 	border-radius: 10px;
 	box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
@@ -31,7 +40,7 @@
 	font-size: 24px;
 	font-weight: 600;
 	text-align: center;
-	color: #ffffff;
+	color: #fb4b02 !important;
 	text-transform: uppercase;
 }
 
@@ -41,10 +50,8 @@
 	margin-bottom: 25px;
 }
 
-label {
-	font-weight: 600;
-	margin-bottom: 10px;
-	color: #555;
+.labelCustom {
+	color: #fb4b02;
 }
 
 input[type='text'],
@@ -56,14 +63,9 @@ input[type='password'] {
 	font-size: 16px;
 }
 
-input[type='text']::placeholder,
-input[type='password']::placeholder {
-	color: #bbb;
-}
-
 button[type='submit'] {
 	padding: 10px 20px;
-	background: linear-gradient(110.1deg, rgb(241, 115, 30) 18.9%, rgb(231, 29, 54) 90.7%) !important;
+	background: linear-gradient(0deg, rgba(255,151,0,1) 0%, rgba(251,75,2,1) 100%);
 	color: #fff;
 	border: none;
 	border-radius: 5px;
@@ -74,10 +76,7 @@ button[type='submit'] {
 	letter-spacing: 1px;
 }
 
-button[type='submit']:hover {
-	background-color: #0062cc;
-	
-}
+/* =============== REGISTRO  =============== */
 
 .register-container {
 	display: flex;
@@ -85,7 +84,7 @@ button[type='submit']:hover {
 	align-items: center;
 	height: 100vh;
 	background-color: #FAD961;
-    background-image: linear-gradient(0deg, #FAD961 0%, #F76B1C 100%);
+    background-image: linear-gradient(0deg, #FAD961 0%, #FAD961 100%);
 }
 
 .form-container {
@@ -153,11 +152,13 @@ button[type='submit']:hover {
 	background-color: #0062cc;
 }
 
+/* =============== ADMIN  =============== */
+
 .buttonCustom3 {
     color: white;
     background: #11998e;
-	background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
-	background: linear-gradient(to right, #38ef7d, #11998e); 
+	background: -webkit-linear-gradient(to right, #12a84c, #12a84c);
+	background: linear-gradient(to right, #12a84c, #12a84c); 
     border: none;
     border-radius: 5px;
 }
@@ -165,8 +166,8 @@ button[type='submit']:hover {
 .buttonCustom4{
 	color: white;
     background: #ED213A;
-	background: -webkit-linear-gradient(to right, #93291E, #ED213A);
-	background: linear-gradient(to right, #931e1e, #ED213A);
+	background: -webkit-linear-gradient(to right, #ED213A, #ED213A);
+	background: linear-gradient(to right, #ED213A, #ED213A);
     border: none;
     border-radius: 5px;
 }
@@ -179,7 +180,30 @@ button[type='submit']:hover {
 }
 
 .tableCustom {
-	background-color: #ff4600;
-background-image: linear-gradient(180deg, #ff4600 0%, #d87b10 100%);
+	background: radial-gradient(343px at 46.3% 47.5%, rgb(242, 242, 242) 0%, rgb(241, 241, 241) 72.9%);
+	border-radius: 10px;
+	box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+}
 
+.tituloTableCustom {
+	color: #fb4b02 ;
+	text-shadow: 1px 1px 1px rgb(66, 66, 66);
+}
+
+.iconoTableCustom {
+	color: #fb4b02;
+}
+
+.modalCustom {
+	background: radial-gradient(343px at 46.3% 47.5%, rgb(242, 242, 242) 0%, rgb(241, 241, 241) 72.9%);
+	
+}
+
+.tituloModalCustom {
+	color: #fb4b02;
+	text-shadow: 1px 1px 1px rgb(66, 66, 66);
+}
+
+.textModalCustom {
+	color: #fb4b02;
 }

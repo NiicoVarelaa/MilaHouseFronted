@@ -57,7 +57,7 @@ export const RegisterScreen = () => {
 				{error ? <h3 className="errorStyle">{msgError}</h3> : ''}
 
 				<div className="input-container">
-					<label htmlFor="nombre" className='text-white'>Nombre:</label>
+					<label htmlFor="nombre" className='labelCustom'>Nombre:</label>
 					<input
 						type="text"
 						id="nombre"
@@ -69,7 +69,7 @@ export const RegisterScreen = () => {
 					/>
 				</div>
                 <div className="input-container">
-					<label htmlFor="apellido" className='text-white'>Apellido:</label>
+					<label htmlFor="apellido" className='labelCustom'>Apellido:</label>
 					<input
 						type="text"
 						id="apellido"
@@ -81,7 +81,7 @@ export const RegisterScreen = () => {
 					/>
 				</div>
 				<div className="input-container">
-					<label htmlFor="email" className='text-white'>Correo electrónico:</label>
+					<label htmlFor="email" className='labelCustom'>Correo electrónico:</label>
 					<input
 						type="email"
 						id="email"
@@ -93,7 +93,7 @@ export const RegisterScreen = () => {
 					/>
 				</div>
 				<div className="input-container">
-					<label htmlFor="password" className='text-white'>Contraseña:</label>
+					<label htmlFor="password" className='labelCustom'>Contraseña:</label>
 					<input
 						type="password"
 						id="password"

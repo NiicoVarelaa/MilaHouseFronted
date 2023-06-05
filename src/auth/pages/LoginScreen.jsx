@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import restaurenteApi from '../../api/restauranteApi';
 import { useNavigate } from 'react-router-dom';
+import './css/auth.css';
+
 
 export const LoginScreen = () => {
 
@@ -40,11 +42,11 @@ export const LoginScreen = () => {
     return (
         <div className="login-container">
 			<form onSubmit={handleSubmit} className="form-container">
-				<h1 className='text-white'>Inicia Sesion</h1>
+				<h1>Inicia Sesion</h1>
 
 				{error ? <h3 className="errorStyle">{msgError}</h3> : ''}
 				<div className="input-container">
-					<label htmlFor="username" className='text-white'>Email:</label>
+					<label htmlFor="username" className='labelCustom'>Email:</label>
 					<input
 						type="email"
 						id="email"
@@ -55,7 +57,7 @@ export const LoginScreen = () => {
 					/>
 				</div>
 				<div className="input-container">
-					<label htmlFor="password" className='text-white'>Password:</label>
+					<label htmlFor="password" className='labelCustom'>Password:</label>
 					<input
 						type="password"
 						id="password"

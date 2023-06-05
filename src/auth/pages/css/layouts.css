@@ -8,18 +8,25 @@
 }
 
 .buttonCustom {
-    color: white !important;
-    text-shadow: 2px 2px 2px rgb(0, 0, 0);
-    background-color: #FFE53B;
+    color: #000000 !important;
+    background-color: #fdc64f !important;
     border: none !important;
+}
 
+.buttonCustom:hover {
+    transform: scale(1.1);
 }
 
 .buttonCustom2 {
     color: white;
-    background: linear-gradient(110.1deg, rgb(241, 115, 30) 18.9%, rgb(231, 29, 54) 90.7%);
+    background: linear-gradient(0deg, rgba(255,151,0,1) 0%, rgba(251,75,2,1) 100%);
     border: none;
     border-radius: 5px;
+    border: none !important;
+}
+
+.buttonCustom2:hover {
+    transform: scale(1.1);
 }
 
 .iconoCustom {
@@ -29,26 +36,4 @@
 .imgCustom {
     height: 750px;
     margin-top: 30px;
-}
-
-.gradient-background {
-    background: linear-gradient(286deg, #fad961, #f76b1c, #ff2525);
-    background-size: 180% 180%;
-    animation: gradient-animation 12s ease infinite;
-}
-
-
-
-@keyframes gradient-animation {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
 }

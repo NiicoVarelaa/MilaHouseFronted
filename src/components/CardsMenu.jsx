@@ -48,15 +48,12 @@ export const CardsMenu = () => {
     
 
     return (
-
         <div className="text-center container py-4 containerCustom">
-            <h4 className="mt-4 mb-5 fs-1 text-white tituloCustom"><strong>Nuestro Menu</strong></h4>
             <div className="row">
-            {
-                cargarProductos.map((producto) =>{
+                {cargarProductos.map((producto) =>{
                     return (
                         <div key={producto._id} className="col-lg-3 col-md-6 mb-4">
-                            <div className="card  bg-transparent text-white border border-0">
+                            <div className="card bg-transparent text-white border border-0">
                                 <div >
                                     <img src={producto.imagen} className=" border border-3 img-fluid " />
                                 </div>
@@ -66,13 +63,9 @@ export const CardsMenu = () => {
                                 </div>
                             </div>
                         </div>
-                    )
-                })
-            } 
-            
-                
-
-                
+                        )
+                    })
+                } 
             </div>
         </div>
     )

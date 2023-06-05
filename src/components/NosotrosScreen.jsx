@@ -1,12 +1,5 @@
 import React from 'react';
 import NavBar from './NavBar';
-import Nico from './images/Nico.jpg';
-import NicoAhumada from './images/NicoAhumada.jpg';
-import MatiasMonteros from './images/MatiasMonteros.jpg';
-import Marcos from './images/Marcos.jpg';
-import { FaInstagram, FaGoogle, FaLinkedin } from "react-icons/fa";
-import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
 import '../auth/pages/css/index.css';
 
 
@@ -26,65 +19,7 @@ export const NosotrosScreen = () => {
                     El impacto de la gente fue inmediato. Fascinados con la experiencia, se lanzaron a recomendar el sándwich de boca a boca. Ese enorme fervor y entusiasmo que la propia presión de los clientes transformó, hizo de la Mila House un centro de culto para los fanáticos de las Milanesas.
                 </p>
 
-                <div className='row'>
-
-                    <div className='col-lg-3 col-md-6 mb-4'>
-                        <div className='card  bg-transparent text-white border border-0'>
-                            <div>
-                                <img src={Nico} alt="" className="w-100 border border-3 img-fluid" />
-                            </div>
-                            <h5 className="tituloCustom mt-4">Nicolas Varela</h5>
-                            <div className='mt-2 d-flex align-items-center justify-content-center'>
-                                    <Button as={Link} to="/error404" variant='link' className='m-1 iconoCustom2'> <FaInstagram /> </Button>
-                                    <Button as={Link} to="/error404" variant='link ' className='m-1 iconoCustom2'> <FaLinkedin /> </Button>
-                                    <Button as={Link} to="/error404" variant='link' className='m-1 iconoCustom2'> <FaGoogle /> </Button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className='col-lg-3 col-md-6 mb-4'>
-                        <div className='card  bg-transparent text-white border border-0'>
-                            <div>
-                                <img src={MatiasMonteros} alt="" className="w-100 border border-3 img-fluid" />
-                            </div>
-                            <h5 className="tituloCustom mt-4">Matias Monteros</h5>
-                            <div className='mt-2 d-flex align-items-center justify-content-center'>
-                                    <Button as={Link} to="/error404" variant='link' className='m-1 iconoCustom2'> <FaInstagram /> </Button>
-                                    <Button as={Link} to="/error404" variant='link ' className='m-1 iconoCustom2'> <FaLinkedin /> </Button>
-                                    <Button as={Link} to="/error404" variant='link' className='m-1 iconoCustom2'> <FaGoogle /> </Button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className='col-lg-3 col-md-6 mb-4'>
-                        <div className='card  bg-transparent text-white border border-0'>
-                            <div>
-                                <img src={NicoAhumada} alt="" className="w-100 border border-3 img-fluid" />
-                            </div>
-                            <h5 className="tituloCustom mt-4">Nicolas Ahumada</h5>
-                            <div className='mt-2 d-flex align-items-center justify-content-center'>
-                                    <Button as={Link} to="/error404" variant='link' className='m-1 iconoCustom2'> <FaInstagram /> </Button>
-                                    <Button as={Link} to="/error404" variant='link ' className='m-1 iconoCustom2'> <FaLinkedin /> </Button>
-                                    <Button as={Link} to="/error404" variant='link' className='m-1 iconoCustom2'> <FaGoogle /> </Button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className='col-lg-3 col-md-6 mb-4'>
-                        <div className='card  bg-transparent text-white border border-0'>
-                            <div>
-                                <img src={Marcos} alt="" className="w-100 border border-3 img-fluid" />
-                            </div>
-                            <h5 className="tituloCustom mt-4">Marcos Friedli</h5>
-                            <div className='mt-2 d-flex align-items-center justify-content-center'>
-                                    <Button as={Link} to="/error404" variant='link' className='m-1 iconoCustom2'> <FaInstagram /> </Button>
-                                    <Button as={Link} to="/error404" variant='link ' className='m-1 iconoCustom2'> <FaLinkedin /> </Button>
-                                    <Button as={Link} to="/error404" variant='link' className='m-1 iconoCustom2'> <FaGoogle /> </Button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+                
             </div>
         </div>
     )

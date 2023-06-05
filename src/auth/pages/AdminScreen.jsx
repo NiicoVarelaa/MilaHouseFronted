@@ -158,7 +158,7 @@ export const AdminScreen = () => {
 		}
 	};
 
-	const confirmarSuspenderUsuario = ({_id}) => {
+	const confirmarSuspenderUsuario = ({ _id }) => {
 		Swal.fire({
 			title: '¿Esta Seguro de Suspender al Usuario?',
 			showDenyButton: true,
@@ -176,8 +176,8 @@ export const AdminScreen = () => {
 		})
 	}
 
-	const suspenderUsuarioClick = async ( _id ) => {
-		
+	const suspenderUsuarioClick = async (_id) => {
+
 		try {
 			const resp = await restauranteApi.put('admin/suspender', {
 				_id,
@@ -189,7 +189,7 @@ export const AdminScreen = () => {
 		}
 	}
 
-	const activarUsuarioClick = async ( _id ) => {
+	const activarUsuarioClick = async (_id) => {
 		try {
 			const resp = await restauranteApi.put('admin/activar', {
 				_id,
@@ -201,7 +201,7 @@ export const AdminScreen = () => {
 		}
 	}
 
-	const confirmarActivarUsuario = ({_id}) => {
+	const confirmarActivarUsuario = ({ _id }) => {
 		Swal.fire({
 			title: '¿Esta Seguro de Activar al Usuario?',
 			showDenyButton: true,
@@ -250,25 +250,25 @@ export const AdminScreen = () => {
 	return (
 		<>
 			<div className='container'>
-				<h1 className="text-center p-3 tituloCustom text-white">Administración</h1>
-				<h3 className='tituloCustom text-white ms-3	'>Usuarios</h3>
+				<h1 className="text-center p-3 tituloTableCustom ">Administración</h1>
+				<h3 className='tituloTableCustom ms-3 mt-5 fs-2'>Usuarios</h3>
 				<Table striped bordered hover className='tableCustom m-3 text-white text-center'>
 					<thead>
 						<tr>
-							<th className='tituloCustom'>#ID</th>
-							<th className='tituloCustom'>Nombre</th>
-							<th className='tituloCustom'>Email</th>
-							<th className='tituloCustom'>Activar</th>
-							<th className='tituloCustom'>Suspender</th>
+							<th className='tituloTableCustom fs-5'>#ID</th>
+							<th className='tituloTableCustom fs-5'>Nombre</th>
+							<th className='tituloTableCustom fs-5'>Email</th>
+							<th className='tituloTableCustom fs-5'>Activar</th>
+							<th className='tituloTableCustom fs-5'>Suspender</th>
 						</tr>
 					</thead>
 					{cargarUsuarios.map((usuario) => {
 						return (
 							<tbody key={usuario._id} >
 								<tr>
-									<td className='text-white '>{usuario._id}</td>
-									<td className='text-white w-25'>{usuario.nombre}</td>
-									<td className='text-white '>{usuario.email}</td>
+									<td className='textTableCustom'>{usuario._id}</td>
+									<td className='textTableCustom w-25'>{usuario.nombre}</td>
+									<td className='textTableCustom '>{usuario.email}</td>
 									<td>
 										<Button variant="light" className='buttonCustom3 text-white' onClick={() => confirmarActivarUsuario(usuario)}>
 											<FaUserCheck className='mb-1 me-1' />
@@ -287,36 +287,34 @@ export const AdminScreen = () => {
 					})}
 				</Table>
 
-				<h3 className="mt-5 tituloCustom ms-3 text-white">Productos</h3>
+				<h3 className="tituloTableCustom mt-5 ms-3 fs-2">Productos</h3>
 
 				{/* Botón con icono "+" */}
 				<div className="d-flex justify-content-end me-5">
-					<Button
-						className="buttonCustom5 bg-transparent"
-						onClick={() => setIsModalOpen(true)}>
-						<FaCartPlus />
+					<Button className="buttonCustom5 bg-transparent" onClick={() => setIsModalOpen(true)}>
+					<FaCartPlus className='iconoTableCustom' />
 					</Button>
 				</div>
 
 				<Table striped bordered hover className='tableCustom m-3 text-white text-center'>
 					<thead>
 						<tr>
-							<th className='tituloCustom'>#ID</th>
-							<th className='tituloCustom'>Nombre Producto</th>
-							<th className='tituloCustom'>Precio</th>
-							<th className='tituloCustom'>Imagen</th>
-							<th className='tituloCustom'>Editar</th>
-							<th className='tituloCustom'>Eliminar</th>
+							<th className='tituloTableCustom fs-5'>#ID</th>
+							<th className='tituloTableCustom fs-5'>Nombre Producto</th>
+							<th className='tituloTableCustom fs-5'>Precio</th>
+							<th className='tituloTableCustom fs-5'>Imagen</th>
+							<th className='tituloTableCustom fs-5'>Editar</th>
+							<th className='tituloTableCustom fs-5'>Eliminar</th>
 						</tr>
 					</thead>
 					{cargarProductos.map((producto) => {
 						return (
 							<tbody key={producto._id}>
 								<tr>
-									<td className='text-white '>{producto._id}</td>
-									<td className='text-white'>{producto.nombre}</td>
-									<td className='text-white'>{producto.precio}</td>
-									<td className='text-white'>{producto.imagen}</td>
+									<td className='textTableCustom'>{producto._id}</td>
+									<td className='textTableCustom'>{producto.nombre}</td>
+									<td className='textTableCustom'>{producto.precio}</td>
+									<td className='textTableCustom w-25'>{producto.imagen}</td>
 									<td>
 										<Button variant="light" className='buttonCustom3 text-white' onClick={() => editarProductoClick(producto)}>
 											<FaPenSquare className='mb-1 me-1' />
@@ -337,11 +335,11 @@ export const AdminScreen = () => {
 
 
 				{/* Modal para agregar producto */}
-				<Modal ariaHideApp={false} isOpen={isModalOpen} onRequestClose={() => setIsModalOpen(false)}>
-					<h2 className='mt-5 tituloCustom ms-3 text-white'>Agregar producto</h2>
+				<Modal ariaHideApp={false} isOpen={isModalOpen} onRequestClose={() => setIsModalOpen(false)} className="modalCustom p-3 mt-5 ps-4 container">
+					<h2 className='mt-5 tituloModalCustom ms-5'>Agregar Producto</h2>
 					<Form onSubmit={handleSubmitForm}>
 						<Form.Group className="mb-3" controlId="formBasicEmail">
-							<Form.Label>Nombre</Form.Label>
+							<Form.Label className='mt-4 textModalCustom fs-5'>Nombre</Form.Label>
 							<Form.Control
 								type="text"
 								name="name"
@@ -353,7 +351,7 @@ export const AdminScreen = () => {
 							/>
 						</Form.Group>
 						<Form.Group className="mb-3" controlId="formBasicEmail">
-							<Form.Label>Precio</Form.Label>
+							<Form.Label className='textModalCustom fs-5'>Precio</Form.Label>
 							<Form.Control
 								type="number"
 								name="precio"
@@ -365,7 +363,7 @@ export const AdminScreen = () => {
 							/>
 						</Form.Group>
 						<Form.Group className="mb-3" controlId="formBasicEmail">
-							<Form.Label>Imagen</Form.Label>
+							<Form.Label className='textModalCustom fs-5'>Imagen</Form.Label>
 							<Form.Control
 								type="text"
 								name="imagen"
@@ -376,18 +374,18 @@ export const AdminScreen = () => {
 								onChange={handleChangeForm}
 							/>
 						</Form.Group>
-						<Button type="submit">Agregar</Button>
+						<Button type="submit" className='mt-3'>Agregar</Button>
 					</Form>
 				</Modal>
 
 				{/* Modal de Editar */}
 				<Modal
 					ariaHideApp={false} isOpen={isModalOpenEditar}
-					onRequestClose={() => setIsModalOpenEditar(false)}>
-					<h2>Editar producto</h2>
+					onRequestClose={() => setIsModalOpenEditar(false)} className="modalCustom p-3 mt-5 ps-4 container">
+					<h2 className='mt-4 tituloModalCustom ms-5'>Editar producto</h2>
 					<Form onSubmit={handleSubmitFormEditar}>
 						<Form.Group className="mb-3" controlId="formBasicEmail">
-							<Form.Label>Nombre</Form.Label>
+							<Form.Label className='mt-4 textModalCustom fs-5'>Nombre</Form.Label>
 							<Form.Control
 								type="text"
 								name="name"
@@ -399,7 +397,7 @@ export const AdminScreen = () => {
 							/>
 						</Form.Group>
 						<Form.Group className="mb-3" controlId="formBasicEmail">
-							<Form.Label>Precio</Form.Label>
+							<Form.Label className='textModalCustom fs-5'>Precio</Form.Label>
 							<Form.Control
 								type="number"
 								name="precio"
@@ -410,7 +408,7 @@ export const AdminScreen = () => {
 							/>
 						</Form.Group>
 						<Form.Group className="mb-3" controlId="formBasicEmail">
-							<Form.Label>Imagen</Form.Label>
+							<Form.Label className='textModalCustom fs-5'>Imagen</Form.Label>
 							<Form.Control
 								type="text"
 								name="imagen"
@@ -421,7 +419,7 @@ export const AdminScreen = () => {
 								onChange={handleChangeFormEditar}
 							/>
 						</Form.Group>
-						<Button type="submit">Agregar</Button>
+						<Button type="submit" className='mt-3'>Agregar</Button>
 					</Form>
 				</Modal>
 			</div>
