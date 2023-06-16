@@ -1,7 +1,9 @@
 import axios from "axios";
 
 const restaurenteApi = axios.create({
-    baseURL:"http://milahousebackend-production.up.railway.app",
+    // baseURL:"http://localhost:4005/",
+    baseURL:"https://milahousebackend-production.up.railway.app",
+
 });
 
 restaurenteApi.interceptors.request.use((config) => {

@@ -16,22 +16,20 @@ export const ContactoScreen = () => {
 				
 
 				<div className="input-container">
-					<label htmlFor="nombre" className='text-white'>Nombre:</label>
+					<label htmlFor="nombre" className='labelCustom'>Nombre:</label>
 					<input
 						type="text"
 						id="nombre"
-						placeholder="Andres Contreras"
 					/>
 				</div>
 				<div className="input-container">
-					<label htmlFor="email" className='text-white'>Correo electrónico:</label>
+					<label htmlFor="email" className='labelCustom'>Correo electrónico:</label>
 					<input
 						type="email"
 						id="email"
-						placeholder="AndiContreras@gmail.com"
 					/>
 				</div>
-                <label htmlFor="email" className='text-white'>Consulta:</label>
+                <label htmlFor="email" className='labelCustom'>Consulta:</label>
 				<InputGroup className='mb-3'>
                     <Form.Control as="textarea" aria-label="With textarea" />
                 </InputGroup>

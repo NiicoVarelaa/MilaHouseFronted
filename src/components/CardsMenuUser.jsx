@@ -26,6 +26,7 @@ export const CardsMenuUser = () => {
                         </div>
                         <div className='card-body bg-transparent'>
                             <h4 class="tituloCustom">Milanesa Especial</h4>
+                            <h5 class="tituloCustom">$ 1500</h5>
                             <Button as={Link} to="register" className='buttonCustom2 mt-3 text-white rounded-pill'> <FaShoppingCart className='iconoCustom mx-2 p2' style={{ fontSize: '30px' }} />Comprar</Button>
                         </div>
                     </div>
@@ -38,6 +39,7 @@ export const CardsMenuUser = () => {
                         </div>
                         <div className='card-body bg-transparent'>
                             <h4 class="tituloCustom">Milanesa Napolitana</h4>
+                            <h5 class="tituloCustom">$ 1600</h5>
                             <Button as={Link} to="register" variant="light" className='buttonCustom2 mt-3 text-white rounded-pill'> <FaShoppingCart className='iconoCustom mx-2 p2' style={{ fontSize: '30px' }} />Comprar</Button>
                         </div>
                     </div>
@@ -50,6 +52,7 @@ export const CardsMenuUser = () => {
                         </div>
                         <div className='card-body bg-transparent'>
                             <h4 class="tituloCustom">Pizzas</h4>
+                            <h5 class="tituloCustom">$ 1200</h5>
                             <Button as={Link} to="register" variant="light" className='buttonCustom2 mt-3 text-white rounded-pill'> <FaShoppingCart className='iconoCustom mx-2 p2' style={{ fontSize: '30px' }} />Comprar</Button>
                         </div>
                     </div>
@@ -62,6 +65,7 @@ export const CardsMenuUser = () => {
                         </div>
                         <div className='card-body bg-transparent'>
                             <h4 class="tituloCustom">Hamburguesas</h4>
+                            <h5 class="tituloCustom">$ 1400</h5>
                             <Button as={Link} to="register" variant="light" className='buttonCustom2 mt-3 text-white rounded-pill'> <FaShoppingCart className='iconoCustom mx-2 p2' style={{ fontSize: '30px' }} />Comprar</Button>
                         </div>
                     </div>
@@ -74,6 +78,7 @@ export const CardsMenuUser = () => {
                         </div>
                         <div className='card-body bg-transparent'>
                             <h4 class="tituloCustom">Mexicano</h4>
+                            <h5 class="tituloCustom">$ 1100</h5>
                             <Button as={Link} to="register" variant="light" className='buttonCustom2 mt-3 text-white rounded-pill'> <FaShoppingCart className='iconoCustom mx-2 p2' style={{ fontSize: '30px' }} />Comprar</Button>
                         </div>
                     </div>
@@ -86,6 +91,7 @@ export const CardsMenuUser = () => {
                         </div>
                         <div className='card-body bg-transparent'>
                             <h4 class="tituloCustom">Lomito Especial</h4>
+                            <h5 class="tituloCustom">$ 1600</h5>
                             <Button as={Link} to="register" variant="light" className='buttonCustom2 mt-3 text-white rounded-pill'> <FaShoppingCart className='iconoCustom mx-2 p2' style={{ fontSize: '30px' }} />Comprar</Button>
                         </div>
                     </div>
@@ -98,6 +104,7 @@ export const CardsMenuUser = () => {
                         </div>
                         <div className='card-body bg-transparent'>
                             <h4 class="tituloCustom">Calzone</h4>
+                            <h5 class="tituloCustom">$ 1300</h5>
                             <Button as={Link} to="register" variant="light" className='buttonCustom2 mt-3 text-white rounded-pill'> <FaShoppingCart className='iconoCustom mx-2 p2' style={{ fontSize: '30px' }} />Comprar</Button>
                         </div>
                     </div>
@@ -110,6 +117,7 @@ export const CardsMenuUser = () => {
                         </div>
                         <div className='card-body bg-transparent'>
                             <h4 class="tituloCustom">Papas con Cheddar</h4>
+                            <h5 class="tituloCustom">$ 1000</h5>
                             <Button as={Link} to="register" variant="light" className='buttonCustom2 mt-3 text-white rounded-pill'> <FaShoppingCart className='iconoCustom mx-2 p2' style={{ fontSize: '30px' }} />Comprar</Button>
                         </div>
                     </div>
