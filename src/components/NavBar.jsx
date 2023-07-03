@@ -1,28 +1,66 @@
-import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
-import LogoNegro from "./images/LogoNegro.png";
-import { Link } from 'react-router-dom';
+import LogoBlanco from "./images/LogoBlanco.png";
+import { Link, useLocation } from 'react-router-dom';
+import { FaRegArrowAltCircleRight } from "react-icons/fa";
+import "../auth/pages/css/auth.css"
+
+
 
 export const NavBar = () => {
+
+    let { pathname } = useLocation();
+
+    const path = pathname.split('/')[1];
+
+    const userLogeado = localStorage.getItem("token") ? true : false;
+
+    
+
+    const handleLogout = () => {
+        localStorage.setItem('token', null);
+    }
+
     return (
-        <Navbar bg="dark" expand="lg" className='p-1 navBarCustom' >
+        <Navbar  expand="lg" className='navBarCustom p-1'>
             <Container >
                 <Navbar.Brand href="home">
-                    <img src={LogoNegro} alt="" width={90} height={80} />
+                    <img src={LogoBlanco} alt="" width={90} height={80} />
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Toggle aria-controls="basic-navbar-nav" className='iconoToggle' />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto me-4">
-                        <Nav.Link href="pedidos" className='text-dark fs-3 tituloNavbar'>Pedidos</Nav.Link>
-                        <Nav.Link href="contacto" className='text-dark fs-3 tituloNavbar'>Contacto</Nav.Link>
-                        <Nav.Link href="nosotros" className='text-dark fs-3 tituloNavbar'>Nosotros</Nav.Link>
-                        <Nav.Link href="error404" className='text-dark fs-3 tituloNavbar'>Sucursales</Nav.Link>
+                        <Button
+                            as={Link}
+                            to="/pedidos"
+                            className={path === 'pedidos' ? 'buttonCustomDisabled fs-5 w-25 m-2 border-2 rounded-pill' : 'buttonCustom fs-5 w-25 m-2 border-2 rounded-pill'}disabled={path === 'pedidos'}>Pedidos
+                        </Button>
+                        <Button
+                            as={Link}
+                            to="/contacto"
+                            className={path === 'contacto' ? 'buttonCustomDisabled fs-5 w-25 m-2 border-2 rounded-pill' : 'buttonCustom fs-5 w-25 m-2 border-2 rounded-pill'}disabled={path === 'contacto'}>Contacto
+                        </Button>
+                        <Button
+                            as={Link}
+                            to="/nosotros"
+                            className={path === 'nosotros' ? 'buttonCustomDisabled fs-5 w-25 m-2 border-2 rounded-pill' : 'buttonCustom fs-5 w-25 m-2 border-2 rounded-pill'}disabled={path === 'nosotros'}>Nosotros
+                        </Button>
+                        <Button
+                            as={Link}
+                            to="/error404"
+                            className={path === 'error404' ? 'buttonCustomDisabled fs-5 w-50 m-2 border-2 rounded-pill' : 'buttonCustom fs-5 w-25 m-2 border-2 rounded-pill'}disabled={path === 'error404'}>Sucursales
+                        </Button>
                     </Nav>
-                    <Button as={Link} to="/login" className='buttonCustom rounded-pill'>Inicia Sesion</Button>
-                    <Button as={Link} to="/register" className='mx-3 buttonCustom rounded-pill'>Registrate</Button>
+                    {
+                        userLogeado
+                            ? <Button as={Link} to="/login" className='buttonLogout rounded-pill m-2 ' onClick={handleLogout}> <FaRegArrowAltCircleRight className='iconoNavBar  ' style={{ fontSize: '23px' }} /> Cerrar Sesion</Button>
+                            : <>
+                                <Button as={Link} to="/login" className='buttonCustom rounded-pill m-2'> Inicia Sesion</Button>
+                                <Button as={Link} to="/register" className='mx-3 buttonCustom rounded-pill'>Registrate</Button>
+                            </>
+                    }
                 </Navbar.Collapse>
             </Container>
         </Navbar>

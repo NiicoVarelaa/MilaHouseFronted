@@ -3,12 +3,16 @@ import restaurenteApi from '../../api/restauranteApi';
 import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/esm/Button';
 import { Link } from 'react-router-dom';
+import NavBar from '../../components/NavBar';
+import Swal from 'sweetalert2';
 
 
 export const PedidosScreen = () => {
     const navigate = useNavigate();
     const [cargarProductosSeleccionados, setCargarProductosSeleccionados] = useState([])
     const [precioFinal, setPrecioFinal] = useState(0)
+    const [pedidoConfirmado, setPedidoConfirmado] = useState(false);
+
     const cargarPedidosUsuarios = async () => {
         try {
             const resp = await restaurenteApi.get("/pedidos/")
@@ -37,6 +41,13 @@ export const PedidosScreen = () => {
                 menu: cargarProductosSeleccionados
             })
             setCargarProductosSeleccionados([])
+            setPedidoConfirmado(true);
+
+            Swal.fire({
+                title: 'Su pedido ha sido enviado',
+                icon: 'success',
+            })
+
         } catch (error) {
             if (error.response.status === 401) {
                 localStorage.removeItem('token');
@@ -54,6 +65,9 @@ export const PedidosScreen = () => {
     }, [cargarPedidosUsuarios])
 
     return (
+        <div>
+            <NavBar />
+        
         <div className="text-center container py-5 containerCustom mt-5">
             <div className="row">
                 {cargarProductosSeleccionados.map((producto) => {
@@ -65,7 +79,6 @@ export const PedidosScreen = () => {
                                 </div>
                                 <div className="card-body bg-transparent">
                                     <h5 className="tituloCustom">{producto.nombre}</h5>
-
                                 </div>
                             </div>
                         </div>
@@ -76,9 +89,9 @@ export const PedidosScreen = () => {
             </div>
                 <div className='ms-4'>
                     <p className=' fs-2 text-white tituloCustom'>Total: <span>{precioFinal}</span></p>
-                    <Button as={Link} to="/" variant="light" className='buttonCustom3 mt-3 text-white' onClick={confirmarPedido}>Confirmar Pedido</Button>
+                    <Button variant="succes" className='buttonCustom3 mt-3 text-white' onClick={confirmarPedido} disabled={pedidoConfirmado}>Confirmar Pedido</Button>
                 </div>
         </div>
-        
+        </div>
     )
 }

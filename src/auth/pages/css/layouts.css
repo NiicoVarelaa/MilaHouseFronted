@@ -13,6 +13,12 @@
     border: none !important;
 }
 
+.buttonCustomDisabled {
+    color: #000000 !important;
+    background-color: #FEEEA3 !important;
+    border: none !important;
+}
+
 .buttonCustom:hover {
     transform: scale(1.1);
 }
@@ -37,3 +43,5 @@
     height: 750px;
     margin-top: 30px;
 }
+
+

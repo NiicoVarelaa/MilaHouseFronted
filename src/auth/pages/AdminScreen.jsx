@@ -11,23 +11,18 @@ import Swal from 'sweetalert2';
 
 
 export const AdminScreen = () => {
-	// Estado para Contralar la Apertura y Cierre del Modal
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
 	const [isModalOpenEditar, setIsModalOpenEditar] = useState(false);
-
-	// Estado para Guardar los Usuarios traidos del backend
+	
 	const [cargarUsuarios, setCargarUsuarios] = useState([]);
 
-	// Estado para Guardar los Productos traidos del backend
 	const [cargarProductos, setCargarProductos] = useState([]);
 
-	// Estado para Almacenar los datos del producto que quiero editar
 	const [productoEditar, setProductoEditar] = useState({});
 
 	const navigate = useNavigate();
 
-	// Estado para Guardar los datos del formulario
 	const [formDate, setFormDate] = useState({
 		name: '',
 		precio: '',
@@ -132,7 +127,6 @@ export const AdminScreen = () => {
 			showCancelButton: true,
 			confirmButtonText: 'Confirmar',
 		}).then((result) => {
-			/* Read more about isConfirmed, isDenied below */
 			if (result.isConfirmed) {
 				Swal.fire('Producto Eliminado', '', 'success')
 				eliminarProductoClick(id)
@@ -165,7 +159,6 @@ export const AdminScreen = () => {
 			showCancelButton: true,
 			confirmButtonText: 'Confirmar',
 		}).then((result) => {
-			/* Read more about isConfirmed, isDenied below */
 			if (result.isConfirmed) {
 				Swal.fire('Usuario Suspendido', '', 'success')
 				suspenderUsuarioClick(_id)
@@ -208,7 +201,6 @@ export const AdminScreen = () => {
 			showCancelButton: true,
 			confirmButtonText: 'Confirmar',
 		}).then((result) => {
-			/* Read more about isConfirmed, isDenied below */
 			if (result.isConfirmed) {
 				Swal.fire('Usuario Activado', '', 'success')
 				activarUsuarioClick(_id)
@@ -223,13 +215,12 @@ export const AdminScreen = () => {
 		e.preventDefault();
 		const { _id, nombre, precio, cantidad } = productoEditar;
 
-		//validaciones
 		if (
 			nombre.length === 0 ||
 			precio.length === 0 ||
 			cantidad.length === 0
 		) {
-			return console.log('todos los campos son obligatorios');
+			return console.log('Todos los campos son obligatorios');
 		}
 
 		setIsModalOpenEditar(false);
@@ -263,6 +254,7 @@ export const AdminScreen = () => {
 						</tr>
 					</thead>
 					{cargarUsuarios.map((usuario) => {
+						const isUsuarioSuspendido = usuario.suspendido;
 						return (
 							<tbody key={usuario._id} >
 								<tr>
@@ -270,7 +262,7 @@ export const AdminScreen = () => {
 									<td className='textTableCustom w-25'>{usuario.nombre}</td>
 									<td className='textTableCustom '>{usuario.email}</td>
 									<td>
-										<Button variant="light" className='buttonCustom3 text-white' onClick={() => confirmarActivarUsuario(usuario)}>
+										<Button variant="light" className='buttonCustom3 text-white' onClick={() => confirmarActivarUsuario(usuario)} disabled={!isUsuarioSuspendido}>
 											<FaUserCheck className='mb-1 me-1' />
 											Activar
 										</Button>
@@ -289,7 +281,6 @@ export const AdminScreen = () => {
 
 				<h3 className="tituloTableCustom mt-5 ms-3 fs-2">Productos</h3>
 
-				{/* Botón con icono "+" */}
 				<div className="d-flex justify-content-end me-5">
 					<Button className="buttonCustom5 bg-transparent" onClick={() => setIsModalOpen(true)}>
 					<FaCartPlus className='iconoTableCustom' />
@@ -333,8 +324,6 @@ export const AdminScreen = () => {
 					})}
 				</Table>
 
-
-				{/* Modal para agregar producto */}
 				<Modal ariaHideApp={false} isOpen={isModalOpen} onRequestClose={() => setIsModalOpen(false)} className="modalCustom p-3 mt-5 ps-4 container">
 					<h2 className='mt-5 tituloModalCustom ms-5'>Agregar Producto</h2>
 					<Form onSubmit={handleSubmitForm}>
@@ -378,7 +367,6 @@ export const AdminScreen = () => {
 					</Form>
 				</Modal>
 
-				{/* Modal de Editar */}
 				<Modal
 					ariaHideApp={false} isOpen={isModalOpenEditar}
 					onRequestClose={() => setIsModalOpenEditar(false)} className="modalCustom p-3 mt-5 ps-4 container">

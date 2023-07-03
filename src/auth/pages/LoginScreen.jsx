@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 import restaurenteApi from '../../api/restauranteApi';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 import './css/auth.css';
 
 
 export const LoginScreen = () => {
 
-    const [email, setEmail] = useState('');
+	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [error, setError] = useState(false);
 	const [msgError, setMsgError] = useState('');
-	const navigate = useNavigate(); 
+	const navigate = useNavigate();
 
-    const startLogin = async (email, password) => {
+	const startLogin = async (email, password) => {
 		try {
 			const resp = await restaurenteApi.post('/auth/', {
 				email,
@@ -34,13 +36,13 @@ export const LoginScreen = () => {
 		}
 	};
 
-    const handleSubmit = (e) => {
+	const handleSubmit = (e) => {
 		e.preventDefault();
 		startLogin(email, password);
 	};
 
-    return (
-        <div className="login-container">
+	return (
+		<div className="login-container">
 			<form onSubmit={handleSubmit} className="form-container">
 				<h1>Inicia Sesion</h1>
 
@@ -52,7 +54,7 @@ export const LoginScreen = () => {
 						id="email"
 						minLength="2"
 						maxLength="25"
-                        value={email}
+						value={email}
 						onChange={(e) => setEmail(e.target.value)}
 					/>
 				</div>
@@ -63,12 +65,23 @@ export const LoginScreen = () => {
 						id="password"
 						minLength="2"
 						maxLength="25"
-                        value={password}
+						value={password}
 						onChange={(e) => setPassword(e.target.value)}
 					/>
+				</div>
+				<div className='container'>
+					<div className='row'>
+						<div className='col-8 mb-4'>
+							<h5 className='fs-6 mt-2 textCuenta'>¿No tienes una cuenta?</h5>
+						</div>
+						<div className='col-4'>
+							<Button as={Link} to="/register" className='btnCuenta'>Registrate
+							</Button>
+						</div>
+					</div>
 				</div>
 				<button type="submit" >Ingresar</button>
 			</form>
 		</div>
-    )
+	)
 }

@@ -1,8 +1,9 @@
-import React from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+
 import { LoginScreen } from '../auth/pages/LoginScreen';
 import { RegisterScreen } from '../auth/pages/RegisterScreen';
 import { HomeScreen } from '../auth/pages/HomeScreen';
+
 import { ContactoScreen } from '../components/ContactoScreen';
 import { NavBar } from '../components/NavBar';
 import { AdminScreen } from '../auth/pages/AdminScreen';
@@ -15,6 +16,9 @@ import { NosotrosScreen } from '../components/NosotrosScreen';
 
 
 export const AppRouter = () => {
+
+    
+
     return (
     <BrowserRouter>
         <Routes>

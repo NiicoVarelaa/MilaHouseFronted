@@ -4,7 +4,13 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* =============== LOGIN  =============== */
+.navBarCustom {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background-color: #050505 ;
+}
+
 
 .login-container {
 	display: flex;
@@ -75,8 +81,6 @@ button[type='submit'] {
 	text-transform: uppercase;
 	letter-spacing: 1px;
 }
-
-/* =============== REGISTRO  =============== */
 
 .register-container {
 	display: flex;
@@ -152,8 +156,6 @@ button[type='submit']:hover {
 	background-color: #0062cc;
 }
 
-/* =============== ADMIN  =============== */
-
 .buttonCustom3 {
     color: white;
     background: #11998e;
@@ -161,6 +163,7 @@ button[type='submit']:hover {
 	background: linear-gradient(to right, #12a84c, #12a84c); 
     border: none;
     border-radius: 5px;
+	
 }
 
 .buttonCustom4{
@@ -206,4 +209,35 @@ button[type='submit']:hover {
 
 .textModalCustom {
 	color: #fb4b02;
+}
+
+.btnCuenta {
+	background-color: #fdc64f !important;
+    border: none !important;
+}
+
+.textCuenta {
+	color: #fb4b02;
+}
+
+.buttonNavBar {
+	color: black !important;
+	border: none !important;
+}
+
+.imgCarousel {
+    max-height: 44rem;
+}
+
+.iconoToggle {
+	background-color: #FAD961 !important;
+}
+
+.buttonLogout {
+	background-color: #FF5733 !important;
+	border: none !important;
+}
+
+.buttonLogout:hover {
+	transform: scale(1.1);
 }
